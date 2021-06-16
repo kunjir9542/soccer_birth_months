@@ -1,0 +1,29 @@
+---
+title: "Soccer_Birth_Months"
+author: "Aryan"
+date: "6/15/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+
+```{r}
+x <- read.csv("birthdates.csv")
+
+x %>%
+  mutate(birth_date = str_sub(value, 2, 11)) %>%
+  select(birth_date)
+
+month <- birth_date %>%
+  mutate(month = str_sub(birth_date, 6, 7)) %>%
+  select(month)
+```
+
+
+```{r}
+```
+
